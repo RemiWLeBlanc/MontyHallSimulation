@@ -60,7 +60,6 @@ def simulation(switch):
         except ValueError:
             pass
 
-
     for i in range(n):
         if monty_hall(False, switch):  # not interactive and switch based on arg
             wins += 1
