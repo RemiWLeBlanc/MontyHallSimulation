@@ -70,7 +70,7 @@ def simulation(switch):
         action = "Switching"
     else:
         action = "Staying"
-    print(f"{action} every time you gave a winning percentage of {winning_percent}%")
+    print(f"{action} every time gave a winning percentage of {winning_percent}%")
 
 
 if __name__ == '__main__':
