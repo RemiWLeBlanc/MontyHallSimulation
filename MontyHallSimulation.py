@@ -20,12 +20,12 @@ def monty_hall(interactive=True, switch=None):
 
     a = {0, 1, 2}
     b = {choice, car}
-    reveal = a.difference(b)
+    reveal = a.difference(b)  # set of doors not chosen and not with the car, could be two doors
     if len(reveal) > 1:
         reveal = random.sample(reveal, 1)  # if they chose the right door, randomly choose to open one of the others
-    reveal = reveal.pop()  # get the value from the single item set
+    reveal = reveal.pop()  # get the door from the single item set
     c = {choice, reveal}
-    other = a.difference(c).pop()
+    other = a.difference(c).pop()  # gets the door other than their choice and one revealed
 
     if interactive:
         print(f"Door {reveal+1} does not have the car.")
