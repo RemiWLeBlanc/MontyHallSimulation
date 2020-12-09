@@ -106,7 +106,7 @@ Enter 3 to simulate staying every time
                 simulation(True, n)
             elif option == '3':  # stay
                 simulation(False, n)
-        else:
+        else:  # user didn't enter an valid option, as again
             continue
 
         while True:  # make sure user enters y or n
