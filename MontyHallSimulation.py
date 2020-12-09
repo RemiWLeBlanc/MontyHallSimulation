@@ -31,8 +31,7 @@ def monty_hall(interactive=True, switch=None):
 
     # calculate which door to reveal
     all_doors = {0, 1, 2}
-    dont_open = {choice, car}
-    reveal = all_doors.difference(dont_open)  # set of doors not chosen and not with the car, could be one or two doors
+    reveal = all_doors.difference({choice, car})  # set of doors not chosen and not with the car, could be one or two doors
     if len(reveal) > 1:  # if they chose the right door
         reveal = random.sample(reveal, 1)  # randomly choose to open one of the other two doors
     reveal = reveal.pop()  # get the door from the single item set
@@ -59,7 +58,6 @@ def monty_hall(interactive=True, switch=None):
     else:  # not interactive
         if switch:  # parameter passed into function call
             choice = other_door  # switch first choice
-
         return doors[choice]  # True or False
 
 
@@ -94,7 +92,7 @@ Enter 3 to simulate staying every time
         if option == '1':
             monty_hall()
 
-        else:  # Computer simulation
+        elif option in {'2', '3'}:  # Computer simulation
             # ask how many times user wants simulation ran
             while True:  # make sure user enters a number
                 n = input("Enter the number of simulations you wish to run: ")
@@ -108,6 +106,8 @@ Enter 3 to simulate staying every time
                 simulation(True, n)
             elif option == '3':  # stay
                 simulation(False, n)
+        else:
+            continue
 
         while True:  # make sure user enters y or n
             ans = input("Play again? (y/n)")
